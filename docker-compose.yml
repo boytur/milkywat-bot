@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  front-end:
+    build:
+      context: ./front-end 
+      dockerfile: ./front-end/Dockerfile
+    ports:
+      - "${NGINX_PORT}:80"
+    depends_on:
+      - report-server
+    volumes:
+      - ./front-end:/app
+
+  report-server:
+    build:
+      context: ./report-server
+      dockerfile: ./report-server/Dockerfile
+    ports:
+      - "${PORT}:5000"
+    env_file:
+      - ./report-server/.env
+    depends_on:
+      - postgres
+    volumes:
+      - ./report-server:/app
+    
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    ports:
+      - "${DB_PORT}:5432"
+    env_file:
+      - .env
+    environment:
+      - "POSTGRES_DB=${DB_NAME}"
+      - "POSTGRES_USER=${DB_USER}"
+      - "POSTGRES_PASSWORD=${DB_PASSWORD}"
+    volumes:
+      - milkiyway_postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    env_file:
+      - .env
+    ports:
+      - "${PG_ADMIN_PORT}:80"
+    environment:
+      - "PGADMIN_DEFAULT_EMAIL=${PG_ADMIN_EMAIL}"
+      - "PGADMIN_DEFAULT_PASSWORD=${PG_ADMIN_PASSWORD}"
+    depends_on:
+      - postgres
+
+volumes:
+  milkiyway_postgres_data:
