@@ -21,6 +21,7 @@ const MemberDetail: React.FC = () => {
    * @description fetch member detail from discordId
    */
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchMemberDetail = async () => {
     try {
       const response = await api.get(`/api/tasks/${discordId}`);
@@ -39,7 +40,7 @@ const MemberDetail: React.FC = () => {
     }
     fetchMemberDetail();
     setTitle(`รายละเอียดงานของ ${user?.user_fname} ${user?.user_lname}`);
-  }, [authState.isLoggedin, discordId,setTitle]);
+  }, [authState.isLoggedin, discordId, fetchMemberDetail, setTitle, user?.user_fname, user?.user_lname]);
   useEffect(() => {
     if (user) {
       setTitle(`รายละเอียดงานของ ${user.user_fname} ${user.user_lname}`);
