@@ -80,7 +80,6 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
       }
     } catch (error) {
       console.error("Error refreshing token:", error);
-      localStorage.clear();
       setAuthState({
         isLoggedin: false,
         isFetching: false,
