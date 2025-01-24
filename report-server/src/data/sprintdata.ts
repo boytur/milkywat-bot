@@ -94,4 +94,47 @@ export const sprint: Sprint[] = [
     sprint_start: "2024-10-29",
     sprint_end: "2024-11-04",
   },
+  {
+    sprint_name: "3/1",
+    sprint_start: "2024-11-25",
+    sprint_end: "2024-12-01",
+  },
+  {
+    sprint_name: "3/2",
+    sprint_start: "2024-12-02",
+    sprint_end: "2024-12-08",
+  },
+  {
+    sprint_name: "3/3",
+    sprint_start: "2024-12-09",
+    sprint_end: "2024-12-15",
+  },
+  {
+    sprint_name: "3/4",
+    sprint_start: "2024-12-16",
+    sprint_end: "2024-12-22",
+  },
+  {
+    sprint_name: "3/5",
+    sprint_start: "2024-12-23",
+    sprint_end: "2024-12-29",
+  },
+  {
+    sprint_name: "3/6",
+    sprint_start: "2024-12-30",
+    sprint_end: "2025-01-05",
+  },
+  {
+    sprint_name: "3/7",
+    sprint_start: "2025-01-06",
+    sprint_end: "2025-01-12",
+  }, {
+    sprint_name: "3/8",
+    sprint_start: "2025-01-13",
+    sprint_end: "2025-01-19",
+  }, {
+    sprint_name: "3/9",
+    sprint_start: "2025-01-20",
+    sprint_end: "2025-01-26",
+  }
 ];
