@@ -1,0 +1,7 @@
+services:
+  front-end:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${NGINX_PORT}:80"
