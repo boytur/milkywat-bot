@@ -13,6 +13,7 @@ import Profile from "./pages/Profie";
 import Member from "./pages/Member";
 import Retrospective from "./pages/Retrospective";
 import MemberDetail from "./pages/Member/[discordId]";
+import Status from "./pages/Status";
 
 import("preline");
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
     path: "/auth/callback",
     element: <Callback />,
   },
+  {
+    path:"/status",
+    element: <Status />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
