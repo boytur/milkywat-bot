@@ -95,6 +95,8 @@ export class TaskController {
         limit: parsedLimit,
       });
 
+      const totalPage = Math.ceil(count / parsedLimit);
+
       return res.status(200).json({
         success: true,
         message: "Get tasks successfully!",
@@ -102,6 +104,8 @@ export class TaskController {
           total: count,
           page: parsedPage,
           limit: parsedLimit,
+          totalPage:totalPage
+          
         },
         tasks,
       });
