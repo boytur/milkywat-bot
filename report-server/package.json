@@ -2,10 +2,10 @@
   "name": "report-server",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec ts-node src/index.ts",
+    "dev": "nodemon --watch src --exec ts-node ./src/index.ts",
     "build": "tsc",
     "serve": "node ./dist/index.js"
   },
@@ -36,8 +36,8 @@
     "@types/node": "^20.14.11",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.6",
-    "nodemon": "^3.1.4",
+    "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3"
+    "typescript": "^5.7.3"
   }
 }
